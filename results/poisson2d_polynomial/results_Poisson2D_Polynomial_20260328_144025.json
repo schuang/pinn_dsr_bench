@@ -1,0 +1,72 @@
+{
+  "pde_name": "Poisson2D_Polynomial",
+  "case_id": "poisson2d_polynomial",
+  "ground_truth_expression": "x1**4 + 1.2*x2**4",
+  "config": {
+    "pinn_num_hidden_layers": 4,
+    "pinn_num_neurons": 50,
+    "pinn_activation": "tanh",
+    "pinn_num_domain": 2000,
+    "pinn_num_boundary": 500,
+    "pinn_adam_epochs": 15000,
+    "pinn_adam_lr": 0.001,
+    "pinn_use_lbfgs": true,
+    "pinn_lbfgs_epochs": 1000,
+    "dsr_max_epochs": 200,
+    "dsr_batch_size": 1000,
+    "dsr_learning_rate": 0.001,
+    "dsr_entropy_weight": 0.07,
+    "dsr_risk_factor": 0.05,
+    "dsr_num_samples": 1000,
+    "dsr_python": null,
+    "dsr_backend": "tensorflow",
+    "dsr_device": null,
+    "dsr_timeout_sec": null,
+    "dsr_n_cores_batch": null,
+    "num_runs": 1,
+    "base_seed": 42,
+    "output_dir": "/home/schuang/work/sym_expr_bench/pinn_dsr_bench/results/poisson2d_polynomial"
+  },
+  "statistics": {
+    "num_runs": 1,
+    "num_successful": 1,
+    "pre_rate": 0.0,
+    "pre_count": 0,
+    "l_phy_mean": 0.00046930210442975814,
+    "l_phy_std": 0.0,
+    "l_phy_min": 0.00046930210442975814,
+    "l_phy_max": 0.00046930210442975814,
+    "pinn_l2_mean": 0.0008618536948587437,
+    "pinn_l2_std": 0.0,
+    "mse_mean": 2.1628916816785263e-08,
+    "mse_min": 2.1628916816785263e-08,
+    "mse_max": 2.1628916816785263e-08
+  },
+  "runs": [
+    {
+      "run_id": 0,
+      "seed": 42,
+      "pde_name": "Poisson2D_Polynomial",
+      "timestamp": "2026-03-28T14:35:21.144129",
+      "ground_truth_expression": "x1**4 + 1.2*x2**4",
+      "pinn_training_time": 45.63410305976868,
+      "pinn_l2_error": 0.0008618536948587437,
+      "pinn_mse": 2.863277781607746e-07,
+      "dsr_time": 258.6487832069397,
+      "expression": "x1**4 + 1.20197248233566*(9.298963732243135e-5*x1*(x1 + x2**4) + x2 - 0.0004548996160558293)**4",
+      "dsr_reward": 0.9987941870507709,
+      "dsr_profile": {
+        "fit_time_sec": 256.19392320897896,
+        "predict_time_sec": 0.00010707898763939738,
+        "backend": "tensorflow",
+        "device": "cpu",
+        "n_cores_batch": -1
+      },
+      "l_phy": 0.00046930210442975814,
+      "pre": false,
+      "mse": 2.1628916816785263e-08,
+      "mse_vs_gt": 2.1628916816785263e-08,
+      "relative_mse": 5.610975634399971e-08
+    }
+  ]
+}
